@@ -1,5 +1,6 @@
 /* vim:set ft=lpc: */
 /* Last Indented: 1360770374 */
+// added remove_interactive to allow for proper reconnects in get_password func - 19 Jan, 2015; Zed @ Lilypad
 #include <globals.h>
 
 // needs fixed to handle passwords
@@ -49,19 +50,21 @@ void get_username(string name)
     }
 }
 
-void get_password(string password, string name)
-{
+void get_password(string password, string name) {
     object user;
 
     if(ACCOUNT_D->password_match(name, password)) {
         if(user = find_player(name)) {
+            remove_interactive(user)
             exec(user, this_object());
             user->reconnect();
             destruct(this_object());
-        } else {
+        }
+        else {
             create_user_object(name);
         }
-    } else {
+    }
+    else {
         printf("\nLogin incorrect\n\n%s login: ", MUD_NAME);
         input_to("get_username", INPUT_TO_NOBYPASS);
     }
