@@ -6,6 +6,7 @@
 #define __GLOBALS_H__
 
 #define MUDLIB_VERSION  "1.006"
+#define MUDLIB_NAME		"SuckingMUD"
 
 #define BIN_DIR         "/bin"
 #define DAEMON_DIR      "/daemon"
@@ -19,12 +20,15 @@
 
 #define ACCOUNT_DATA    CONFIG_DIR "/accounts.o"
 #define ACCOUNT_D       DAEMON_DIR "/account"
+#define LOGON_D			DAEMON_DIR "/logon"
 
 #define VIRTUAL_D       DAEMON_DIR "/virtual"
 
 #define LOGIN_OB        CLONE_DIR "/login"
 #define USER_OB         CLONE_DIR "/user"
 #define VOID_OB         DAEMON_DIR "/void"
+#define ROOM_OB			CLONE_DIR "/room"
+#define START_RM         CLONE_DIR "/hole"
 
 #define BASE            INHERIT_DIR "/base"
 #define OVERRIDES_FILE  DAEMON_DIR "/simul_efun"

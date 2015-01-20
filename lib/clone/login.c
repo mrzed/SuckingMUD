@@ -22,7 +22,7 @@ private void create_user_object(string name)
     user->set_name(name);
     exec(user, this_object());
     user->setup();
-    user->move(VOID_OB);
+    user->move(START_RM);
     destruct(this_object());
 }
 
